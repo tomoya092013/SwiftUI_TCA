@@ -12,20 +12,13 @@ struct ListRow: View {
   var isCheck: Bool
   
   var body: some View {
-    if isCheck {
-      HStack {
-        Image(systemName: "checkmark.square")
-        Text(self.task)
-      }
-    } else {
-      HStack {
-        Image(systemName: "square")
-        Text(self.task)
-      }
+    HStack {
+      Image(systemName: self.isCheck ? "checkmark.square": "square")
+      Text(self.task)
     }
   }
 }
 
 #Preview {
-    ListRow(task: "プレビュー", isCheck: true)
+  ListRow(task: "プレビュー", isCheck: false)
 }

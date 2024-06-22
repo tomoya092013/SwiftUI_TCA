@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct TodoData {
-  var todos = [
+class TodoData: ObservableObject {
+  @Published var todos = [
     Todo(title: "あああ", checked: false),
     Todo(title: "いいい", checked: true),
     Todo(title: "ううう", checked: false)

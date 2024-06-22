@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-struct Todo:Identifiable {
-  var id = UUID()
+struct Todo {
   var title: String
   var checked: Bool
   
