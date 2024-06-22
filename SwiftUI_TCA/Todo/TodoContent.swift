@@ -54,7 +54,7 @@ struct TodoContent: View {
           ToolbarItem(placement: .navigationBarTrailing) {
             Button(action: {
               let filterTodo = todoData.todos.filter{
-                $0.checked
+                !$0.checked
               }
               todoData.todos = filterTodo
             })

@@ -13,8 +13,15 @@ struct ListRow: View {
   
   var body: some View {
     HStack {
-      Image(systemName: self.isCheck ? "checkmark.square": "square")
-      Text(self.task)
+      if (self.isCheck) {
+        Image(systemName: "checkmark.square")
+        Text(self.task)
+          .strikethrough()
+          .foregroundColor(.gray)
+      } else {
+        Image(systemName: "square")
+        Text(self.task)
+      }
     }
   }
 }
