@@ -36,8 +36,8 @@ struct TodoContent: View {
           .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
               Button(action: {
-                let filterTodo = todoData.todos.filter{todo in
-                  todo.checked
+                let filterTodo = todoData.todos.filter{
+                  $0.checked
                 }
                 todoData.todos = filterTodo
               })
