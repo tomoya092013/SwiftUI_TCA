@@ -6,17 +6,27 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct ContentView: View {
-    var body: some View {
-      NavigationView{
+  var body: some View {
+    NavigationView {
+      VStack {
         NavigationLink(destination: TodoContent()) {
           Text("Todoアプリへ")
         }
+        NavigationLink(destination: FeatureView(
+          store: Store(initialState: Feature.State()) {
+            Feature()
+          }
+        )) {
+          Text("FeatureViewへ")
+        }
       }
     }
+  }
 }
 
 #Preview {
-    ContentView()
+  ContentView()
 }
